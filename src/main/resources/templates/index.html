@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+
+<body class="container">
+
+
+<header><center><h1 class="um">TADFLIX</h1></center></header>
+<center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addModal"><a href="/cadastrar"><font color="red">Adicionar novo filme</font></a></button></center>
+<br />
+<br />
+
+<center>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Ano de lançamento</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="filme : ${filmeList}">
+            <td th:text="${filme.id}">ID</td>
+            <td th:text="${filme.titulo}">Titulo</td>
+            <td th:text="${filme.categoria}">Categoria</td>
+            <td th:text="${filme.descricao}">Descrição</td>
+            <td th:text="${filme.anoLancamento}">Ano de Lançamento</td>
+            <td>
+                <a th:href="@{'/editar/' + ${filme.id}}">Editar</a> &nbsp; &nbsp;
+                <a th:href="@{'/deletar/' + ${filme.id}}">Deletar</a>
+            </td>
+
+        </tr>
+    </tbody>
+</table></center>
+
+
+</body>
+</html>

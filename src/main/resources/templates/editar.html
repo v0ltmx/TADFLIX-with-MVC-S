@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body class="container">
+<center><h2 class="um">Editar</h2></center>
+<center>
+<form action="#" th:action="@{/salvar}" method="post" th:object="${filme}">
+    <input type="text" th:field="*{id}" placeholder="ID" readonly/><br />
+
+
+    <input type="text" th:field="*{titulo}" name="titulo" placeholder="Titulo" /><br />
+    <p th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></p>
+
+    <input type="text" th:field="*{categoria}" name="categoria" placeholder="Categoria" /><br />
+    <p th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></p>
+
+    <input type="text" th:field="*{descricao}" name="descricao" placeholder="Descrição"/><br />
+    <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></p>
+
+    <input type="number" th:field="*{anoLancamento}" placeholder="Ano"/><br />
+
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addModal">OK</button>
+
+</form></center>
+</body>
+</html>

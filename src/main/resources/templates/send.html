@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body class="container">
+
+<h2 class="um">O filme "<td th:text="${filme.titulo}"></td>" foi salvo!   </h2>
+
+<center><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#addModal"><a href="/"><font color="red">Voltar</font></a></button></center>
+
+</body>
+</html>
